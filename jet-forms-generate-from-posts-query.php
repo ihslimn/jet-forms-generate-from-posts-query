@@ -18,20 +18,22 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 add_action( 'plugins_loaded', function () {
-	define( 'JET_GFQ__FILE__', __FILE__ );
-	define( 'JET_GFQ_PLUGIN_BASE', plugin_basename( JET_GFQ__FILE__ ) );
-	define( 'JET_GFQ_PATH', plugin_dir_path( JET_GFQ__FILE__ ) );
+	if ( function_exists( 'jet_engine' ) ) {
+		define( 'JET_GFQ__FILE__', __FILE__ );
+		define( 'JET_GFQ_PLUGIN_BASE', plugin_basename( JET_GFQ__FILE__ ) );
+		define( 'JET_GFQ_PATH', plugin_dir_path( JET_GFQ__FILE__ ) );
 
-	add_filter( 'jet-engine/forms/options-generators', function( $instances ) {
-		require JET_GFQ_PATH . 'generator.php';
-		$instances[] = new Jet_Forms_Posts_Query_Generator();
-		return $instances;
-	} );
+		add_filter( 'jet-engine/forms/options-generators', function( $instances ) {
+			require JET_GFQ_PATH . 'generator.php';
+			$instances[] = new Jet_Forms_Posts_Query_Generator();
+			return $instances;
+		} );
 
-	add_filter( 'jet-form-builder/forms/options-generators', function ( $instances ) {
-		require JET_GFQ_PATH . 'jet-fb-generator.php';
-		$instances[] = new Jet_Fb_Posts_Query_Generator();
-		return $instances;
-	} );
+		add_filter( 'jet-form-builder/forms/options-generators', function ( $instances ) {
+			require JET_GFQ_PATH . 'jet-fb-generator.php';
+			$instances[] = new Jet_Fb_Posts_Query_Generator();
+			return $instances;
+		} );
+	}
 } );
 
