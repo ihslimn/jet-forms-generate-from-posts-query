@@ -2,9 +2,9 @@
 /**
  * Plugin Name: JetForms - Generate options from Posts Query
  * Plugin URI:
- * Description: Allow to get form options from Posts Query
+ * Description: Allows to get form options from Posts Query
  * Version:     1.0.0
- * Author:      Crocoblock
+ * Author:      
  * Author URI:  
  * Text Domain: jet-forms-generate-from-posts-query
  * License:     GPL-3.0+
