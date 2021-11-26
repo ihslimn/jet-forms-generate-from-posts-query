@@ -20,7 +20,7 @@ class Jet_Fb_Posts_Query_Generator extends Jet_Form_Builder\Generators\Base {
 	 * @return string
 	 */
 	public function get_name() {
-		return 'Get values list from JetEngine Posts Query';
+		return 'Get values list from JetEngine Query';
 	}
 
 	/**

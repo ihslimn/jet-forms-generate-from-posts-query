@@ -19,7 +19,7 @@ class Jet_Forms_Posts_Query_Generator extends \Jet_Engine\Forms\Generators\Base 
 	 * @return string
 	 */
 	public function get_name() {
-		return 'Get values list from JetEngine Posts Query';
+		return 'Get values list from JetEngine Query';
 	}
 
 	/**
