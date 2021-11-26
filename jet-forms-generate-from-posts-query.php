@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: JetForms - Generate options from Posts Query
+ * Plugin Name: JetForms - Generate options from Query Builder query
  * Plugin URI:
- * Description: Allows to get form options from Posts Query
+ * Description: Allows to get form options from Query Builder query
  * Version:     1.0.0
  * Author:      
  * Author URI:  
