@@ -1,12 +1,13 @@
 Specify the query ID, property to get values from, and property to get labels from:
 https://prnt.sc/20xajrc  
 
-5|_ID|cct_created
+5|_ID|cct_created|cct_author_id
 - 5 is the query ID
 - _ID is the property from which values will be filled
 - cct_created is the property from which labels will be filled
+- cct_author_id is the property from which calculated values will be filled
 
-Values and labels can be filtered.
+Values, labels, and calculated values can be filtered.
 
 Example for WC Query:\
 (values will be product IDs, labels - product names)

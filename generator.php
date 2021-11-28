@@ -31,35 +31,39 @@ class Jet_Forms_Posts_Query_Generator extends \Jet_Engine\Forms\Generators\Base 
 
 		$args = explode( '|', $field );
 
-		$query_id = $args[0];
-		$value_field = isset( $args[1] ) ? $args[1] : 'ID';
-		$label_field = isset( $args[2] ) ? $args[2] : 'post_title';
-		$additional_args = isset( $args[3] ) ? $args[3] : '';
+		$query_id 			= $args[0];
+		$value_field 		= isset( $args[1] ) ? $args[1] : 'ID';
+		$label_field		= isset( $args[2] ) ? $args[2] : 'post_title';
+		$calculated_field 	= isset( $args[3] ) ? $args[3] : false;
+		$additional_args	= isset( $args[4] ) ? $args[4] : false;
 
-		$query = Query_Manager::instance()->get_query_by_id( $query_id );
+		$query 	= Query_Manager::instance()->get_query_by_id( $query_id );
 		$result = array();
+
 		if ( $query ) {		
+
 			$query->setup_query();
 			$objects = $query->_get_items();
 
 			foreach ($objects as $object) {
 
-				$value = isset( $object->$value_field ) ? $object->$value_field : null;
-				$label = isset( $object->$label_field ) ? $object->$label_field : null;
+				$value 		= isset( $object->$value_field ) ? $object->$value_field : false;
+				$label 		= isset( $object->$label_field ) ? $object->$label_field : false;
+				$calculated = isset( $object->$calculated_field ) ? $object->$calculated_field : false;
 
-				$value = apply_filters( 'jet-forms-generate-from-query/value', $value, $object, $additional_args );
-				$label = apply_filters( 'jet-forms-generate-from-query/label', $label, $object, $additional_args );
+				$value 		= apply_filters( 'jet-forms-generate-from-query/value', $value, $object, $additional_args );
+				$label 		= apply_filters( 'jet-forms-generate-from-query/label', $label, $object, $additional_args );
+				$calculated = apply_filters( 'jet-forms-generate-from-query/calculated', $calculated, $object, $additional_args );
 
-				if ( isset( $value ) && isset( $label ) ) {
+				if ( $value && $label ) {
 					$result[] = array(
-						'value' => $value,
-						'label' => $label,
+						'value' 	=> $value,
+						'label' 	=> $label,
+						'calculate' => $calculated,
 					);
 				}
 			}
 		}
 		return $result;
-
 	}
-
 }
