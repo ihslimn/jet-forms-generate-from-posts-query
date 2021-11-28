@@ -1,5 +1,6 @@
 Specify the query ID, property to get values from, and property to get labels from:
 https://prnt.sc/20xajrc  
+(if you are using Posts Query and you do not need to use calculated value, you may just set the query ID)
 
 5|_ID|cct_created|cct_author_id
 - 5 is the query ID
