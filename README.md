@@ -1,3 +1,6 @@
+Requires JetEngine plugin to work.
+Compatible with JetEngine Forms and JetFormBuilder
+
 Specify the query ID, property to get values from, and property to get labels from:
 https://prnt.sc/20xajrc  
 (if you are using Posts Query and you do not need to use calculated value, you may just set the query ID)
