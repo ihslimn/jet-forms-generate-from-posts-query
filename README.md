@@ -1,4 +1,4 @@
-Requires JetEngine plugin to work.
+**Requires JetEngine plugin to work.**
 Compatible with JetEngine Forms and JetFormBuilder
 
 Specify the query ID, property to get values from, and property to get labels from:
