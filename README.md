@@ -1,4 +1,7 @@
-**Requires JetEngine plugin to work.**
+**OBSOLETE**
+"Get values list from JetEngine Query" generator has become a part of JetFormBuilder plugin, so there is no need to use this add-on.
+
+*Requires JetEngine plugin to work.*
 Compatible with JetEngine Forms and JetFormBuilder
 
 Specify the query ID, property to get values from, and property to get labels from:
